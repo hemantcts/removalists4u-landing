@@ -18,5 +18,4 @@ Open `index.html` in a browser (assets are in `./assets/`). Font: Barlow via Goo
 - **Owner's note** ("A note from the team"): the name "Daniel M., Founder & Operations Manager" and the story are placeholders. Replace with the real owner's name, photo and words. Signature uses the Caveat Google Font.
 - **Crew strip**: "Tom / Sam / Jay" with years of service are placeholders; use real crew first names and photos.
 - **Track record timeline**: 2022 Awards Winner, 2023 and 2024 Service Awards are from the client's badge strip; the descriptions under each are generic and should be checked against the actual award category.
-- **Footer ABN** is a bracketed placeholder.
 - Seals (hero strip, trust cards, footer, awards timeline) are HTML/SVG lookalikes; swap for official badge files when supplied. The stats row (4.8, 12,000+, 98%, 7 days) lives at the bottom of the navy "Why choose us" section.
