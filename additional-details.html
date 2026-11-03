@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Move Details | Removalists4u</title>
+<meta name="description" content="Tell us a little more about your move so we can give you an accurate removalist quote. Add any additional service and save 10%.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#223869">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#223869; --navy-900:#1A2C55; --navy-700:#2E4680; --mint:#86CEBB; --mint-700:#2F7A68; --mint-100:#E7F5F1;
+  --ink:#2B3140; --muted:#5A6478; --line:#E3EAF2; --bg:#F6F9FC; --bg2:#EDF4FA; --red:#D7263D; --gold:#F5B301; --white:#fff;
+  --radius:14px; --shadow:0 18px 50px rgba(16,30,64,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Barlow,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3,h4{margin:0;color:var(--navy);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
+.eyebrow::before{content:"";width:28px;height:3px;background:var(--mint);border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:17px;padding:16px 28px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(34,56,105,.18)}
+.btn-primary{background:var(--mint);color:#102039}
+.btn-outline{background:#fff;color:var(--navy);border:1.5px solid #C9D4E5}
+.skip-link{position:absolute;left:-9999px;top:8px;z-index:100;background:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
+.skip-link:focus{left:8px}
+:focus-visible{outline:3px solid var(--mint-700);outline-offset:2px}
+
+/* top bar */
+.topbar{background:var(--navy-900);color:#D6DEEC;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px}
+.topbar span{display:inline-flex;align-items:center;gap:8px}
+.topbar .l{display:flex;gap:26px}
+.topbar b{color:#fff}
+.stars{color:var(--gold);letter-spacing:2px}
+
+/* header */
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(16,30,64,.05)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.header nav{display:flex;gap:30px;font-weight:600;font-size:16px}
+.header nav a{text-decoration:none;color:var(--navy)}
+.header nav a:hover{color:var(--mint-700)}
+.phone{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.phone .ic{width:42px;height:42px;border-radius:50%;background:var(--mint-100);display:grid;place-items:center;flex:none}
+.phone small{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.phone b{font-size:18px;line-height:1.1}
+
+/* hero */
+.d-hero{background:linear-gradient(90deg,rgba(26,44,85,.97) 0%,rgba(34,56,105,.92) 55%,rgba(34,56,105,.78) 100%),url('./assets/735c5d36866cbedb73bf03d3b8ce305c.jpg') center 60%/cover;color:#fff}
+.d-hero .wrap{padding-top:48px;padding-bottom:56px;display:flex;flex-direction:column;gap:36px}
+.d-steps{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:#C9D3E6}
+.d-steps li{display:flex;align-items:center;gap:10px}
+.d-steps li+li::before{content:"";width:40px;height:2px;background:rgba(255,255,255,.25);margin-right:2px}
+.d-step-dot{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.35);font-size:14px;font-weight:800;flex:none}
+.d-steps .is-done,.d-steps .is-current{color:#fff}
+.d-steps .is-done .d-step-dot{background:var(--mint);border-color:var(--mint);color:#102039}
+.d-steps .is-current .d-step-dot{background:#fff;border-color:#fff;color:var(--navy)}
+.d-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,420px);gap:48px;align-items:end}
+.d-hero-copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.d-hero h1{color:#fff;font-size:52px;line-height:1.06}
+.d-hero h1 em{font-style:normal;color:var(--mint)}
+.d-hero p{font-size:19px;line-height:1.55;color:#D6DEEC;max-width:600px}
+.d-hero-promo{display:flex;gap:16px;align-items:center;background:#fff;color:var(--navy);border-radius:16px;padding:18px 20px;text-decoration:none;box-shadow:0 20px 50px rgba(10,20,45,.35);border:2px solid var(--mint);transition:transform .15s}
+.d-hero-promo:hover{transform:translateY(-2px)}
+.d-hero-promo strong{display:block;font-size:19px;margin-bottom:2px}
+.d-hero-promo .t{font-size:15px;line-height:1.45;color:var(--muted)}
+.badge10{flex:none;width:72px;height:72px;border-radius:50%;background:var(--mint);color:#102039;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px;font-weight:800;line-height:1}
+.badge10 small{font-size:12px;letter-spacing:.08em}
+
+/* layout */
+.d-body{background:var(--bg)}
+.d-body .wrap{padding-top:56px;padding-bottom:96px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.d-form{display:flex;flex-direction:column;gap:20px;min-width:0}
+
+/* cards */
+.d-card{margin:0;min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 32px 32px;display:flex;flex-direction:column;gap:20px;box-shadow:0 4px 18px rgba(16,30,64,.04)}
+.d-card-head{display:flex;gap:14px;align-items:center;padding:0;float:left;width:100%}
+.d-card-head + *{clear:both}
+.d-card-head strong{display:block;font-size:22px;color:var(--navy);line-height:1.2}
+.d-card-head small{display:block;font-size:15px;color:var(--muted);margin-top:2px}
+.d-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--mint);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+
+/* fields */
+.d-field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.d-label{font-size:15px;font-weight:600;color:var(--navy)}
+.d-label em{color:var(--red);font-style:normal}
+.d-opt{font-weight:500;color:var(--muted)}
+.d-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.d-form input[type=text],.d-form select,.d-form textarea{width:100%;min-width:0;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #D3DCE8;border-radius:10px;transition:border-color .15s,box-shadow .15s}
+.d-form input[type=text],.d-form select{height:52px;padding:0 14px}
+.d-form select{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23223869' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:40px}
+.d-form textarea{padding:12px 14px;resize:vertical;min-height:96px;line-height:1.5}
+.d-form input[type=text]:focus,.d-form select:focus,.d-form textarea:focus{outline:0;border-color:var(--mint-700);box-shadow:0 0 0 4px rgba(134,206,187,.3)}
+.d-form ::placeholder{color:#97A1B3}
+
+/* bedroom pills */
+.d-pills{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.d-pill{position:relative;cursor:pointer}
+.d-pill input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.d-pill span{display:flex;align-items:center;justify-content:center;height:52px;border:1.5px solid #D3DCE8;border-radius:10px;font-weight:700;font-size:16px;color:var(--navy);background:#fff;transition:all .15s}
+.d-pill:hover span{border-color:var(--mint)}
+.d-pill input:checked + span{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 8px 18px rgba(34,56,105,.22)}
+.d-pill input:focus-visible + span{outline:3px solid var(--mint-700);outline-offset:2px}
+.d-field.is-invalid .d-pill span{border-color:var(--red)}
+.d-error{color:var(--red);font-size:14px;font-weight:600}
+
+/* checkbox */
+.d-check{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.d-check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--navy);flex:none}
+.d-check small{display:block;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}
+
+/* services + offer */
+.d-card-services{border:2px solid var(--mint)}
+.d-offer{display:flex;gap:16px;align-items:center;background:linear-gradient(90deg,var(--navy-900),var(--navy-700));color:#fff;border-radius:12px;padding:16px 18px}
+.d-offer .badge10{width:60px;height:60px;font-size:20px}
+.d-offer strong{display:block;font-size:18px}
+.d-offer span{font-size:15px;color:#D6DEEC}
+.d-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.d-service{position:relative;display:flex;flex-direction:column;gap:12px;padding:20px 18px;border:1.5px solid #D3DCE8;border-radius:14px;background:#fff;cursor:pointer;transition:all .15s}
+.d-service:hover{border-color:var(--mint);transform:translateY(-2px)}
+.d-service input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.d-service input:focus-visible ~ .d-service-tick{outline:3px solid var(--mint-700);outline-offset:2px}
+.d-service-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-100);color:var(--mint-700);display:grid;place-items:center}
+.d-service-text strong{display:block;font-size:18px;color:var(--navy)}
+.d-service-text small{display:block;font-size:14px;color:var(--muted);line-height:1.45;margin-top:4px}
+.d-service-tick{position:absolute;top:16px;right:16px;width:24px;height:24px;border-radius:50%;border:2px solid #C9D4E5;background:#fff}
+.d-service.is-checked{border-color:var(--mint-700);background:var(--mint-100);box-shadow:0 10px 24px rgba(47,122,104,.14)}
+.d-service.is-checked .d-service-icon{background:#fff}
+.d-service.is-checked .d-service-tick{border-color:var(--mint-700);background:var(--mint-700) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") no-repeat center}
+.d-discount-status{font-size:15px;font-weight:600;color:var(--muted);background:var(--bg);border-radius:10px;padding:12px 16px}
+.d-discount-status.is-active{color:var(--mint-700);background:var(--mint-100)}
+.d-terms{font-size:13px;color:var(--muted)}
+
+/* submit */
+.d-submit{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.d-submit .btn{min-width:280px;font-size:18px;padding:18px 32px}
+.d-submit .btn:disabled{opacity:.7;cursor:wait;transform:none;box-shadow:none}
+.d-submit p{font-size:15px;color:var(--muted)}
+.d-submit p a{font-weight:700}
+
+/* sidebar */
+.d-aside{display:flex;flex-direction:column;gap:16px;position:sticky;top:108px}
+.d-aside-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.d-aside-card > strong{display:block;font-size:19px;color:var(--navy);margin-bottom:6px}
+.d-aside-card p{font-size:15px;color:var(--muted)}
+.d-aside-offer{background:linear-gradient(160deg,var(--navy-900),var(--navy-700));border:0;color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.d-aside-offer > strong{color:#fff;margin:8px 0 0}
+.d-aside-offer p{color:#D6DEEC}
+.d-aside-offer a{color:var(--mint);font-weight:700;margin-top:6px;text-decoration:none}
+.d-aside-offer a:hover{text-decoration:underline}
+.d-aside-offer .badge10{width:60px;height:60px;font-size:20px}
+.d-ticks{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.d-ticks li{display:flex;gap:10px;align-items:flex-start}
+.d-ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23142347' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") no-repeat center}
+.d-aside-call .btn{width:100%;margin-top:14px;padding:14px 20px}
+.d-trust{list-style:none;margin:0;padding:4px 6px;display:flex;flex-direction:column;gap:12px;font-size:15px;font-weight:600;color:var(--navy)}
+.d-trust li{display:flex;gap:10px;align-items:center}
+.d-trust svg{flex:none}
+
+/* footer */
+footer{background:var(--navy-900);color:#C9D3E6;padding:64px 0 28px}
+footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:48px}
+footer h4{color:#fff;font-size:17px;margin-bottom:14px}
+footer a{color:#C9D3E6;text-decoration:none;display:block;margin-bottom:10px;font-size:15px}
+footer a:hover{color:#fff}
+footer .about p{font-size:15px;line-height:1.65;margin:18px 0}
+footer .info{display:block;margin-bottom:10px;font-size:15px}
+footer .bottom{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);margin-top:48px;padding-top:24px;font-size:13px}
+footer .bottom span{display:flex;gap:20px}
+footer .bottom a{margin:0;font-size:13px}
+
+@media (max-width:1100px){
+  .header nav,.topbar{display:none}
+  .d-hero-grid{grid-template-columns:1fr;gap:28px;align-items:start}
+  .d-hero-promo{max-width:520px}
+  .d-body .wrap{grid-template-columns:1fr}
+  .d-aside{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .d-trust{grid-column:1/-1}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  .btn{font-size:16px;padding:14px 20px}
+  .header .wrap{height:68px}
+  .header img{height:36px!important}
+  .header .phone{gap:8px}
+  .header .phone small{display:none}
+  .header .phone b{font-size:20px;white-space:nowrap}
+  .phone .ic{width:40px;height:40px}
+  .d-hero .wrap{padding-top:28px;padding-bottom:36px;gap:24px}
+  .d-steps{font-size:13px;gap:8px}
+  .d-steps li{gap:6px}
+  .d-steps li+li::before{width:14px}
+  .d-step-dot{width:26px;height:26px;font-size:13px}
+  .d-hero h1{font-size:32px}
+  .d-hero p{font-size:16px}
+  .d-hero-promo{padding:14px 16px;gap:14px}
+  .d-hero-promo strong{font-size:17px}
+  .d-hero-promo .t{font-size:14px}
+  .badge10{width:60px;height:60px;font-size:20px}
+  .d-body .wrap{padding-top:24px;padding-bottom:56px;gap:20px}
+  .d-card{padding:22px 18px 24px;gap:18px}
+  .d-card-head strong{font-size:19px}
+  .d-card-head small{font-size:14px}
+  .d-num{width:36px;height:36px;font-size:16px}
+  .d-grid-2,.d-services{grid-template-columns:1fr}
+  .d-pills{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .d-service{flex-direction:row;align-items:center;padding:16px 48px 16px 14px;gap:14px}
+  .d-service-icon{flex:none;width:46px;height:46px}
+  .d-service-tick{top:50%;margin-top:-12px}
+  .d-offer{align-items:flex-start;padding:14px}
+  .d-offer strong{font-size:16px}
+  .d-offer span{font-size:14px}
+  .d-submit{align-items:stretch}
+  .d-submit .btn{min-width:0;width:100%}
+  .d-aside{grid-template-columns:1fr}
+  footer{padding:48px 0 24px}
+  footer .cols{grid-template-columns:1fr;gap:32px}
+  footer .bottom{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="l">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#86CEBB" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open 7 days, incl. weekends &amp; public holidays</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#86CEBB" stroke-width="2.2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>All Melbourne suburbs &amp; interstate</span>
+    </div>
+    <span><span class="stars">★★★★★</span> <b>4.8 / 5</b> on Google &nbsp;·&nbsp; ProductReview <b>Service Award 2024</b></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap">
+    <a href="index.html"><img src="./assets/logo.svg" alt="Removalists4u" style="height:46px;width:auto"></a>
+    <nav aria-label="Main">
+      <a href="index.html#why">Why Us</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#pricing">Pricing</a><a href="index.html#reviews">Reviews</a><a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="phone" href="tel:0383481703">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223869" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+      <span><small>Speak to a real person, 7 days</small><b>03 8348 1703</b></span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO / THANK YOU -->
+<section class="d-hero">
+  <div class="wrap">
+    <ol class="d-steps" aria-label="Quote progress">
+      <li class="is-done"><span class="d-step-dot" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Quote request</span></li>
+      <li class="is-current" aria-current="step"><span class="d-step-dot" aria-hidden="true">2</span><span>Move details</span></li>
+      <li><span class="d-step-dot" aria-hidden="true">3</span><span>Your quote</span></li>
+    </ol>
+    <div class="d-hero-grid">
+      <div class="d-hero-copy">
+        <span class="eyebrow">Thank you</span>
+        <h1>Thanks! Your quote request is <em>in.</em></h1>
+        <p>Share a few more details about your move so we can give you an accurate quotation. It only takes a minute.</p>
+      </div>
+      <a class="d-hero-promo" href="#services-step">
+        <span class="badge10" aria-hidden="true">10%<small>OFF</small></span>
+        <span><strong>Save 10% on your move</strong><span class="t">Add any additional service below and we'll take 10% off your quote.</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + SIDEBAR -->
+<section class="d-body">
+  <div class="wrap">
+    <form class="d-form" id="detailsForm" action="https://removalists4u.com.au/insert.php" method="post" enctype="multipart/form-data" novalidate>
+      <!-- Keep your server-side value here, e.g. value="<?php echo htmlspecialchars($id); ?>". The script below also fills it from ?id= in the URL. -->
+      <input type="hidden" name="id" value="">
+
+      <!-- 1. MOVE SIZE -->
+      <fieldset class="d-card">
+        <legend class="d-card-head"><span class="d-num" aria-hidden="true">1</span><span><strong>Move size</strong><small>How big is the home you're moving from?</small></span></legend>
+        <div class="d-field">
+          <span class="d-label" id="bedLabel">Number of bedrooms <em>*</em></span>
+          <div class="d-pills" role="radiogroup" aria-labelledby="bedLabel">
+            <label class="d-pill"><input type="radio" name="bedroom_count" value="1" required><span>1 bed</span></label>
+            <label class="d-pill"><input type="radio" name="bedroom_count" value="2"><span>2 beds</span></label>
+            <label class="d-pill"><input type="radio" name="bedroom_count" value="3"><span>3 beds</span></label>
+            <label class="d-pill"><input type="radio" name="bedroom_count" value="4"><span>4 beds</span></label>
+            <label class="d-pill"><input type="radio" name="bedroom_count" value="5"><span>5 beds</span></label>
+          </div>
+          <p class="d-error" id="bedError" hidden>Please choose the number of bedrooms.</p>
+        </div>
+        <label class="d-field">
+          <span class="d-label">Specialty or heavy items <span class="d-opt">(optional)</span></span>
+          <textarea name="info" id="exampleFormControlTextarea1" rows="3" placeholder="e.g. piano, pool table, safe, large fridge, gym equipment"></textarea>
+        </label>
+      </fieldset>
+
+      <!-- 2. PICK UP -->
+      <fieldset class="d-card">
+        <legend class="d-card-head"><span class="d-num" aria-hidden="true">2</span><span><strong>Pick-up details</strong><small>Where are we collecting from?</small></span></legend>
+        <div class="d-grid-2">
+          <label class="d-field">
+            <span class="d-label">Full address or suburb</span>
+            <input type="text" name="pick_location" id="pick" placeholder="e.g. 12 Smith St, Richmond" autocomplete="street-address">
+          </label>
+          <label class="d-field">
+            <span class="d-label">Property type</span>
+            <select name="pick_property">
+              <option value="" selected>Select property type</option>
+              <option value="1">Single storey house</option>
+              <option value="2">Double storey house</option>
+              <option value="3">Triple storey house</option>
+              <option value="4">Apartment with elevator</option>
+              <option value="5">Apartment without elevator (1st floor)</option>
+              <option value="6">Apartment without elevator (2nd floor)</option>
+              <option value="7">Apartment without elevator (3rd floor+)</option>
+              <option value="8">Storage Facility</option>
+              <option value="9">Commercial Property</option>
+            </select>
+          </label>
+        </div>
+        <label class="d-check">
+          <input type="checkbox" name="pick_property_status" id="pick_property_status" value="1">
+          <span>Property has access or parking restrictions <small>e.g. narrow driveway, loading-zone only, long walk to the door</small></span>
+        </label>
+      </fieldset>
+
+      <!-- 3. DROP OFF -->
+      <fieldset class="d-card">
+        <legend class="d-card-head"><span class="d-num" aria-hidden="true">3</span><span><strong>Drop-off details</strong><small>Where are we delivering to?</small></span></legend>
+        <div class="d-grid-2">
+          <label class="d-field">
+            <span class="d-label">Full address or suburb</span>
+            <input type="text" name="drop_location" id="drop" placeholder="e.g. 8 Lygon St, Brunswick" autocomplete="street-address">
+          </label>
+          <label class="d-field">
+            <span class="d-label">Property type</span>
+            <select name="drop_property">
+              <option value="" selected>Select property type</option>
+              <option value="1">Single storey house</option>
+              <option value="2">Double storey house</option>
+              <option value="3">Triple storey house</option>
+              <option value="4">Apartment with elevator</option>
+              <option value="5">Apartment without elevator (1st floor)</option>
+              <option value="6">Apartment without elevator (2nd floor)</option>
+              <option value="7">Apartment without elevator (3rd floor+)</option>
+              <option value="8">Storage Facility</option>
+              <option value="9">Commercial Property</option>
+            </select>
+          </label>
+        </div>
+        <label class="d-check">
+          <input type="checkbox" name="drop_property_status" id="drop_property_status" value="1">
+          <span>Property has access or parking restrictions <small>e.g. narrow driveway, loading-zone only, long walk to the door</small></span>
+        </label>
+      </fieldset>
+
+      <!-- 4. ADDITIONAL SERVICES + 10% OFFER -->
+      <fieldset class="d-card d-card-services" id="services-step">
+        <legend class="d-card-head"><span class="d-num" aria-hidden="true">4</span><span><strong>Additional services</strong><small>Optional, select any you'd like help with</small></span></legend>
+        <div class="d-offer" role="note">
+          <span class="badge10" aria-hidden="true">10%<small>OFF</small></span>
+          <div><strong>Add any service &amp; save 10% on your move</strong><span>Choose one or more services below and we'll apply a 10% discount to your removal quote.</span></div>
+        </div>
+        <div class="d-services">
+          <label class="d-service">
+            <input type="checkbox" name="additional-services[]" value="Cleaning Before/After Move">
+            <span class="d-service-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v7"/><path d="M8 10h8l1 4H7z"/><path d="M7 14l-1 7h12l-1-7"/><path d="M10 17v4M14 17v4"/></svg></span>
+            <span class="d-service-text"><strong>Cleaning</strong><small>Before or after your move, by our trusted cleaning partners.</small></span>
+            <span class="d-service-tick" aria-hidden="true"></span>
+          </label>
+          <label class="d-service">
+            <input type="checkbox" name="additional-services[]" value="Gas &amp; Electricity">
+            <span class="d-service-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <span class="d-service-text"><strong>Gas &amp; Electricity</strong><small>Get your utilities connected or transferred to your new home.</small></span>
+            <span class="d-service-tick" aria-hidden="true"></span>
+          </label>
+          <label class="d-service">
+            <input type="checkbox" name="additional-services[]" value="Insurance">
+            <span class="d-service-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <span class="d-service-text"><strong>Insurance</strong><small>Extra peace of mind for your belongings during the move.</small></span>
+            <span class="d-service-tick" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="d-discount-status" id="discountStatus" role="status" aria-live="polite">Select a service to unlock your 10% discount.</p>
+        <p class="d-terms">*[Add your discount terms here, e.g. "Applies to the removal labour cost. One discount per booking."]</p>
+      </fieldset>
+
+      <div class="d-submit">
+        <button class="btn btn-primary d-submit-btn" type="submit" name="detail">Submit details →</button>
+        <p>We'll review your details and send your quote shortly. Prefer to talk? Call <a href="tel:0383481703">03 8348 1703</a>.</p>
+      </div>
+    </form>
+
+    <!-- SIDEBAR -->
+    <aside class="d-aside" aria-label="Help and information">
+      <div class="d-aside-card d-aside-offer">
+        <span class="badge10" aria-hidden="true">10%<small>OFF</small></span>
+        <strong>Bundle &amp; save</strong>
+        <p>Add cleaning, gas &amp; electricity or insurance and get 10% off your move.</p>
+        <a href="#services-step">See services →</a>
+      </div>
+      <div class="d-aside-card">
+        <strong>Why we ask</strong>
+        <ul class="d-ticks">
+          <li>Bedrooms tell us which truck and crew size you need</li>
+          <li>Stairs, lifts and parking affect loading time</li>
+          <li>Heavy items may need extra hands or equipment</li>
+        </ul>
+      </div>
+      <div class="d-aside-card d-aside-call">
+        <strong>Prefer to talk it through?</strong>
+        <p>A real person answers 7 days a week, 7am – 8pm.</p>
+        <a class="btn btn-outline" href="tel:0383481703"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 03 8348 1703</a>
+      </div>
+      <ul class="d-trust">
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F7A68" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Verified, background-checked movers</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F7A68" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Upfront quotes, no hidden fees</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F7A68" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect height="16" rx="2" width="18" x="3" y="5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Next-day availability in most suburbs</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <img src="./assets/logo.svg" alt="Removalists4u" style="height:44px;width:auto;background:#fff;padding:6px 10px;border-radius:8px">
+        <p>Melbourne's award-winning removalist platform. Verified movers, upfront half-hour rates and 7-day support for homes and offices across Victoria and interstate.</p>
+      </div>
+      <div><h4>Company</h4><a href="index.html#why">Why Us</a><a href="index.html#how">How It Works</a><a href="index.html#pricing">Our Prices</a><a href="index.html#reviews">Reviews</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Services</h4><a href="index.html#services">House Removalists</a><a href="index.html#services">Apartment Removalists</a><a href="index.html#services">Office Removalists</a><a href="index.html#services">Furniture Removalists</a><a href="index.html#services">Interstate Moves</a></div>
+      <div><h4>Contact</h4><a href="tel:0383481703" style="color:#fff;font-weight:700;font-size:22px">03 8348 1703</a><a href="#">info@removalists4u.com.au</a><span class="info">Melbourne, VIC</span><span class="info">Open 7 days, 7am – 8pm</span></div>
+    </div>
+    <div class="bottom"><span>© 2026 Removalists4u. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms</a></span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var form = document.getElementById('detailsForm');
+  if (!form) return;
+
+  /* Quote ID: keep any server-filled value, otherwise read ?id= from the URL. */
+  var idField = form.querySelector('input[name="id"]');
+  var urlId = new URLSearchParams(window.location.search).get('id');
+  if (idField && !idField.value && urlId) idField.value = urlId;
+
+  /* 10% discount status */
+  var services = form.querySelectorAll('input[name="additional-services[]"]');
+  var status = document.getElementById('discountStatus');
+  function updateDiscount() {
+    var picked = [];
+    services.forEach(function (box) {
+      box.closest('.d-service').classList.toggle('is-checked', box.checked);
+      if (box.checked) picked.push(box.closest('.d-service').querySelector('strong').textContent);
+    });
+    if (picked.length) {
+      status.classList.add('is-active');
+      status.textContent = '10% discount unlocked: ' + picked.join(', ') + ' added to your move.';
+    } else {
+      status.classList.remove('is-active');
+      status.textContent = 'Select a service to unlock your 10% discount.';
+    }
+  }
+  services.forEach(function (box) { box.addEventListener('change', updateDiscount); });
+  updateDiscount();
+
+  /* Validation: number of bedrooms is required. */
+  var bedGroup = form.querySelector('.d-pills');
+  var bedError = document.getElementById('bedError');
+  function bedsValid() {
+    var ok = !!form.querySelector('input[name="bedroom_count"]:checked');
+    bedGroup.closest('.d-field').classList.toggle('is-invalid', !ok);
+    bedError.hidden = ok;
+    return ok;
+  }
+  form.querySelectorAll('input[name="bedroom_count"]').forEach(function (r) {
+    r.addEventListener('change', function () { if (!bedError.hidden) bedsValid(); });
+  });
+
+  var btn = form.querySelector('.d-submit-btn');
+  var btnLabel = btn.textContent;
+  form.addEventListener('submit', function (e) {
+    if (!bedsValid()) {
+      e.preventDefault();
+      bedGroup.closest('.d-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.querySelector('input[name="bedroom_count"]').focus({ preventScroll: true });
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    // Disabled buttons aren't submitted, so keep the "detail" flag the PHP expects.
+    var flag = document.createElement('input');
+    flag.type = 'hidden'; flag.name = 'detail'; flag.value = '';
+    form.appendChild(flag);
+  });
+
+  /* Re-enable the button if the user comes back with the browser Back button. */
+  window.addEventListener('pageshow', function () {
+    btn.disabled = false;
+    btn.textContent = btnLabel;
+  });
+})();
+</script>
+</body>
+</html>
