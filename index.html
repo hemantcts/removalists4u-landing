@@ -189,7 +189,10 @@ h3{font-size:22px;line-height:1.25;letter-spacing:-.005em}
 .reg p{padding:0 0 18px;font-size:15px;line-height:1.6;color:var(--muted)}
 
 /* faq */
-.faq .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:96px;align-items:start}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);grid-template-rows:auto 1fr;gap:40px 96px;align-items:start}
+.faq .faqs{grid-column:2;grid-row:1/3}
+.faq-img{margin:0}
+.faq-img img{width:100%;height:auto}
 .faqs details{border-top:1px solid var(--line)}
 .faqs details:last-child{border-bottom:1px solid var(--line)}
 .faqs summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-size:20px;font-weight:500;color:var(--ink)}
@@ -214,6 +217,9 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 .callbar{display:none}
 
 @media(max-width:1180px){
+  .faq .wrap{grid-template-rows:none}
+  .faq .faqs{grid-column:auto;grid-row:auto}
+  .faq-img{max-width:520px}
   .head nav{display:none}
   .hero .wrap,.how .wrap,.day .wrap,.rev .wrap,.areas .wrap,.faq .wrap,.rhead,.rfoot{grid-template-columns:1fr;gap:56px}
   .day .side{position:static}
@@ -288,6 +294,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .reg{columns:1}
   .reg summary{padding:13px 0}
   .faq .wrap{gap:24px}
+  .faq-img{max-width:420px}
   .faqs summary{font-size:17px;padding:17px 0}
   .faqs p{padding:0 0 18px;font-size:16px}
   .close .acts{margin-top:24px}
@@ -505,6 +512,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <details name="f"><summary>How much notice do I need to give?</summary><p>We recommend booking at least 3–5 days in advance. We also accept next-day or even same-day moves if available.</p></details>
       <details name="f"><summary>Do you offer interstate moving services?</summary><p>Yes, we provide secure and efficient interstate relocations with full tracking and coordination.</p></details>
     </div>
+    <figure class="faq-img"><img src="assets/mover-boxes.webp" width="900" height="1064" loading="lazy" decoding="async" alt="Smiling Removalists4u mover in a navy uniform leaning on a stack of branded moving boxes"></figure>
   </div>
 </section>
 
