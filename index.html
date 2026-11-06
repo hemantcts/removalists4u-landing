@@ -23,7 +23,7 @@ a{color:inherit}
 h1,h2,h3,p,ol,ul,figure,blockquote{margin:0;padding:0}
 ol,ul{list-style:none}
 h1,h2,h3{color:var(--ink);font-weight:600;letter-spacing:-.015em}
-h1{font-size:clamp(36px,3.6vw,45px);line-height:1.12;letter-spacing:-.022em;text-wrap:balance}
+h1{font-size:clamp(34px,3vw,42px);line-height:1.12;letter-spacing:-.022em;text-wrap:balance}
 h2{font-size:46px;line-height:1.1}
 h3{font-size:22px;line-height:1.25;letter-spacing:-.005em}
 .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
@@ -65,11 +65,11 @@ h3{font-size:22px;line-height:1.25;letter-spacing:-.005em}
 /* hero */
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#EEF8F4 0%,#F7FBFA 45%,#fff 100%)}
 .hero::before{content:"";position:absolute;right:-180px;top:40px;width:760px;height:760px;border-radius:50%;background:radial-gradient(closest-side,rgba(134,206,187,.32),rgba(134,206,187,0));pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:64px;padding-top:80px;padding-bottom:88px;align-items:start}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:56px;padding-top:80px;padding-bottom:88px;align-items:start}
 .h1v{display:none}.h1v.d{display:inline}
 html[data-h=office] .h1v.d,html[data-h=apartment] .h1v.d{display:none}
 html[data-h=office] .h1v.o,html[data-h=apartment] .h1v.a{display:inline}
-html[data-h=office] h1{font-size:clamp(32px,3.05vw,38px)}
+html[data-h=office] h1{font-size:clamp(30px,2.5vw,35px)}
 .hero .lead{margin:24px 0 0;max-width:600px}
 .hero-call{margin-top:30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:18px}
 .hero-mcta{margin-top:30px;display:flex;flex-direction:column;gap:14px;align-items:center}
