@@ -89,22 +89,19 @@ html[data-h=office] h1{font-size:clamp(30px,2.5vw,35px)}
 .q h2{font-size:28px;letter-spacing:-.01em}
 .q .prog{display:flex;align-items:center;gap:14px;margin:14px 0 28px;font-size:14px;font-weight:500;color:var(--muted)}
 .q .bar{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
-.q .bar i{display:block;height:100%;width:50%;background:var(--mint-btn);transition:width .2s}
+.q .bar i{display:block;height:100%;width:50%;background:var(--mint-btn)}
 .q label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:18px}
 .q input[type=text],.q input[type=tel],.q input[type=email],.q input[type=date]{display:block;width:100%;height:52px;margin-top:7px;padding:0 14px;border:1px solid #CFD6E0;border-radius:6px;font:400 17px Barlow,Arial,sans-serif;color:var(--ink);background:#fff}
 .q input:focus{outline:2px solid var(--mint-btn);outline-offset:0;border-color:var(--mint-btn)}
 .q .btn{width:100%}
-.q .ok{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--text)}
-.q .ok input{width:18px;height:18px;margin:3px 0 0;flex:none;accent-color:var(--navy)}
-.q .ok a{font-weight:600}
+.q .consent{margin-top:12px;font-size:14px;line-height:1.5;color:var(--muted);text-align:center}
+.q .consent a{color:var(--ink);text-underline-offset:2px}
 .q .promise{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:16px;font-weight:600;color:var(--ink)}
 .q .meta{margin-top:6px;font-size:14px;line-height:1.5;color:var(--muted);text-align:center}
-.q .back{display:block;margin:16px auto 0;padding:6px;background:none;border:0;font:500 15px Barlow,Arial,sans-serif;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .q .chips{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 18px}
 .q .chip{font-size:14px;color:var(--teal);font-weight:600;background:var(--mint-soft);border-radius:20px;padding:4px 12px}
 .q .chip[hidden]{display:none}
 .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
-.done h2{margin-bottom:12px}.done p{font-size:17px}.done .note{margin-top:18px;font-size:14px;color:var(--muted)}
 
 /* partners */
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:40px 0;overflow:hidden}
@@ -432,34 +429,24 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 
     <div class="qwrap">
     <div class="q" id="quote" data-loc="form">
-      <!-- shortcut: not wired to a backend on this static preview. In production post to insert.php (same field names as live) and send step 1 to the CRM as a partial lead. -->
+      <!-- Step 1 of 2. In production this posts to insert.php, which saves the lead to the CRM straight away (so sales can call within 2 minutes) and redirects to additional-details.html?id=[lead id]. The static preview skips the post and opens step 2 directly. -->
       <form id="qf" action="insert.php" method="post" novalidate>
         <h2>Get your free quote in 60 seconds</h2>
-        <div class="prog"><span id="stepLabel">Step 1 of 2</span><span class="bar"><i id="stepBar"></i></span></div>
+        <div class="prog"><span>Step 1 of 2</span><span class="bar"><i></i></span></div>
         <input class="hp" type="text" name="extra_field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="suburb" id="fSuburb">
         <input type="hidden" name="home_size" id="fSize">
+        <!-- consent is now the line under the button; keep sending terms_status so the PHP check still passes -->
+        <input type="hidden" name="terms_status" value="1">
         <div class="chips"><span class="chip" id="fSizeChip" hidden></span><span class="chip" id="fChip" hidden></span></div>
-        <div class="step">
-          <label>Your name<input type="text" name="name" autocomplete="name" required></label>
-          <label>Your phone number<input type="tel" name="phone" inputmode="tel" autocomplete="tel" pattern="[0-9 +()\-]{8,}" required></label>
-          <label>Your e-mail<input type="email" name="email" autocomplete="email" required></label>
-          <button class="btn btn-mint" type="submit">Continue</button>
-        </div>
-        <div class="step" hidden>
-          <label>Move date<input type="date" name="move_date" id="fDate"></label>
-          <label class="ok"><input type="checkbox" name="terms_status" required><span>Yes, I accept the <a href="https://removalists4u.com.au/privacy-policy">Privacy Policy</a> and agree to be contacted about my move.</span></label>
-          <button class="btn btn-mint" type="submit" name="request">Get my free quote</button>
-          <button class="back" type="button" id="fBack">Back</button>
-        </div>
+        <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Your phone number<input type="tel" name="phone" inputmode="tel" autocomplete="tel" pattern="[0-9 +()\-]{8,}" required></label>
+        <label>Your e-mail<input type="email" name="email" autocomplete="email" required></label>
+        <button class="btn btn-mint" type="submit" name="request">Continue to step 2</button>
+        <p class="consent">By continuing, you agree to our <a href="https://removalists4u.com.au/privacy-policy">Privacy Policy</a> and to be contacted about your move.</p>
         <p class="promise"><svg class="ic" aria-hidden="true" style="color:var(--teal)"><use href="#i-phone"/></svg>We'll call you within 2 minutes</p>
         <p class="meta">Free and no obligation. All providers are ID and police checked.</p>
       </form>
-      <div class="done" id="qd" tabindex="-1" hidden role="status">
-        <h2>Thanks, <span id="qn"></span>. We've got your enquiry.</h2>
-        <p>We'll call you within 2 minutes to talk through your quote. Need us sooner? <a class="link" href="tel:0383481703">Call 03 8348 1703</a></p>
-        <p class="note">Preview build: this form is not connected yet, so nothing has been sent.</p>
-      </div>
     </div>
     </div>
   </div>
@@ -652,28 +639,20 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     if(!open)$$('.avail').forEach(function(el){el.hidden=true});
   }
 
-  // Two-step quote: both steps stay in the DOM, so entries survive moving back and forth.
-  var f=$('#qf'),steps=$$('.step',f),cur=0,partial=false;
-  $('#fDate').min=new Date().toISOString().slice(0,10);
-  function show(n){
-    cur=n;steps.forEach(function(s,i){s.hidden=i!==n});
-    $('#stepLabel').textContent='Step '+(n+1)+' of 2';$('#stepBar').style.width=n?'100%':'50%';
-    $('input',steps[n]).focus({preventScroll:true});
-  }
-  function valid(step){return $$('input',step).every(function(i){return i.reportValidity()})}
+  // Step 1 of 2: contact details only. Valid entries open step 2 (move details); there's no thank-you until both steps are done.
+  var f=$('#qf');
   f.addEventListener('submit',function(e){
+    if(f.extra_field.value){e.preventDefault();return}
+    if(!$$('input[required]',f).every(function(i){return i.reportValidity()})){e.preventDefault();return}
+    track('quote_step1_complete',{lead_status:'partial'});
+    // Hand the first name, suburb and home size to step 2 for the greeting and prefill (kept out of the URL).
+    var nm=f.elements.name.value.trim().split(/\s+/)[0];
+    var lead={name:nm.charAt(0).toUpperCase()+nm.slice(1),suburb:$('#fSuburb').value,size:$('#fSize').value};
+    try{sessionStorage.setItem('r4u_lead',JSON.stringify(lead))}catch(err){}
+    // Static preview: no backend, so open step 2 with a preview reference. Remove these two lines once insert.php handles the redirect.
     e.preventDefault();
-    if(f.extra_field.value)return;
-    if(!valid(steps[cur]))return;
-    if(cur===0){
-      if(!partial){partial=true;track('quote_step1_complete',{lead_status:'partial'})}
-      return show(1);
-    }
-    track('quote_submit',{lead_status:'complete'});
-    $('#qn').textContent=f.elements.name.value.trim().split(' ')[0];
-    f.hidden=true;$('#qd').hidden=false;$('#qd').focus();
+    location.href='additional-details.html?id=PREVIEW-'+Date.now().toString().slice(-6);
   });
-  $('#fBack').addEventListener('click',function(){show(0)});
 
   // Rate rows open the form with that home size already chosen.
   $$('a.rrow[data-size]').forEach(function(a){
@@ -681,7 +660,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       var s=a.dataset.size;$('#fSize').value=s;
       var c=$('#fSizeChip');c.textContent='Home size: '+s;c.hidden=false;
       track('rate_row_click',{home_size:s});
-      setTimeout(function(){$('input',steps[cur]).focus({preventScroll:true})},400);
+      setTimeout(function(){$('input[name=name]',f).focus({preventScroll:true})},400);
     });
   });
 
