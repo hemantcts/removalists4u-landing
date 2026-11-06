@@ -88,7 +88,6 @@ html[data-h=office] h1{font-size:clamp(32px,3.05vw,38px)}
 
 /* form */
 .qwrap{position:relative}
-.qwrap::before{content:"";position:absolute;right:-26px;bottom:-26px;width:150px;height:150px;border-radius:10px;background:linear-gradient(135deg,transparent 0 40%,var(--mint) 40% 50%,transparent 50% 58%,var(--navy) 58%);opacity:.9}
 .q{position:relative;border:1px solid var(--line);border-radius:10px;background:#fff;padding:40px;box-shadow:0 30px 70px -30px rgba(20,35,63,.25)}
 .q h2{font-size:28px;letter-spacing:-.01em}
 .q .prog{display:flex;align-items:center;gap:14px;margin:14px 0 28px;font-size:14px;font-weight:500;color:var(--muted)}
@@ -116,7 +115,9 @@ html[data-h=office] h1{font-size:clamp(32px,3.05vw,38px)}
 .marq{display:flex;width:max-content;animation:mq 40s linear infinite}
 .marq:hover{animation-play-state:paused}
 .marq div{display:flex;gap:48px;padding-right:48px}
-.slot{width:210px;height:84px;border:1px solid #DDE3EA;border-radius:8px;display:grid;place-items:center;font-size:14px;font-weight:500;color:#98A2B3;background:var(--soft)}
+.slot{width:190px;height:84px;display:grid;place-items:center}
+.slot img{max-width:170px;max-height:56px;width:auto;height:auto;object-fit:contain}
+.slot.sq img{max-height:80px}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* review strip */
@@ -292,12 +293,13 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .hero .lead{margin-top:16px}
   .hero-mcta .avail{font-size:15px}
   .proof{margin-top:30px;padding-top:22px;gap:18px}
-  .qwrap::before{right:-12px;bottom:-12px;width:90px;height:90px}
   .q{padding:26px 22px}
   .q h2{font-size:24px}
   .partners{padding:28px 0}
   .partners p{margin-bottom:18px;font-size:13px}
-  .slot{width:150px;height:62px}
+  .slot{width:130px;height:60px}
+  .slot img{max-width:116px;max-height:40px}
+  .slot.sq img{max-height:58px}
   .marq div{gap:20px;padding-right:20px}
   .strip{padding:52px 0 56px}
   .strip .top{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:22px}
@@ -464,8 +466,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 
 <section class="partners" aria-label="Partnered with leading Melbourne brands">
   <p>Partnered with leading Melbourne brands</p>
-  <!-- placeholders: swap each .slot for an approved partner logo <img> -->
-  <div class="marq"><div><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span></div><div aria-hidden="true"><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span><span class="slot">Partner logo</span></div></div>
+  <div class="marq"><div><span class="slot"><img src="assets/partners/afterpay.webp" alt="Afterpay" loading="lazy" decoding="async"></span><span class="slot sq"><img src="assets/partners/agl.webp" alt="AGL" loading="lazy" decoding="async"></span><span class="slot sq"><img src="assets/partners/alinta-energy.webp" alt="Alinta Energy" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/allianz.webp" alt="Allianz" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/aussie-broadband.webp" alt="Aussie Broadband" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/barry-plant.webp" alt="Barry Plant" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/dodo.webp" alt="Dodo" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/energyaustralia.webp" alt="EnergyAustralia" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/harcourts.webp" alt="Harcourts" loading="lazy" decoding="async"></span></div><div aria-hidden="true"><span class="slot"><img src="assets/partners/afterpay.webp" alt="" loading="lazy" decoding="async"></span><span class="slot sq"><img src="assets/partners/agl.webp" alt="" loading="lazy" decoding="async"></span><span class="slot sq"><img src="assets/partners/alinta-energy.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/allianz.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/aussie-broadband.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/barry-plant.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/dodo.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/energyaustralia.webp" alt="" loading="lazy" decoding="async"></span><span class="slot"><img src="assets/partners/harcourts.webp" alt="" loading="lazy" decoding="async"></span></div></div>
 </section>
 
 <section class="strip" id="reviews" aria-label="Customer reviews">
