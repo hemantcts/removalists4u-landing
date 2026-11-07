@@ -71,6 +71,10 @@ html[data-h=office] .h1v.d,html[data-h=apartment] .h1v.d{display:none}
 html[data-h=office] .h1v.o,html[data-h=apartment] .h1v.a{display:inline}
 html[data-h=office] h1{font-size:clamp(30px,2.5vw,35px)}
 .hero .lead{margin:24px 0 0;max-width:600px}
+.hero .wrap{align-items:stretch}
+.hero-copy{display:flex;flex-direction:column}
+.hero-pic{position:relative;flex:1 1 0;min-height:200px;margin-top:36px;border-radius:12px;overflow:hidden;background:var(--soft)}
+.hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .hero-call{margin-top:30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:18px}
 .hero-mcta{margin-top:30px;display:flex;flex-direction:column;gap:14px;align-items:center}
 .hero-mcta .btn{width:100%;min-height:62px;font-size:20px}
@@ -260,6 +264,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .svc{gap:20px}
   .pts{grid-template-columns:repeat(2,1fr)}
   .proof{flex-wrap:wrap}
+  .hero-pic{display:none!important}
   .how-img{order:2;max-width:560px}
   .rcards{grid-template-columns:repeat(3,minmax(280px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
   .rcards::-webkit-scrollbar{display:none}
@@ -286,7 +291,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .hero .wrap{padding-top:32px;padding-bottom:56px;gap:44px}
   .hero .lead{margin-top:16px}
   .hero-mcta .avail{font-size:15px}
-  .proof{margin-top:30px;padding-top:22px;gap:12px}
+  .proof{margin-top:30px;padding-top:22px;gap:12px 14px;justify-content:center}
   .proof img{height:40px}
   .proof .b-g{margin-right:0}
   .q{padding:26px 22px}
@@ -367,6 +372,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .callbar .avail{font-size:13px;margin-bottom:6px}
   .callbar .btn{width:100%;min-height:52px;font-size:18px}
 }
+@media(max-width:420px){.proof{gap:10px}.proof img{height:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq{animation:none}.svc>div,.btn{transition:none}.svc>div:hover{transform:none}}
 </style>
 </head>
@@ -409,7 +415,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <main id="top">
 <section class="hero">
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <span class="eyebrow">Melbourne removalists · Open 7 days</span>
       <h1><span class="h1v d">Melbourne removalists from $64 per half hour. Rated 4.8★ on Google.</span><span class="h1v o">Highly rated Melbourne office removalists. Minimal downtime, upfront rates.</span><span class="h1v a">Melbourne apartment removalists, from $64 per half hour.</span></h1>
       <p class="lead">Tell us about your move once. We match you with a vetted, police-checked team, give you one upfront quote and assign the right crew for your home.</p>
@@ -425,6 +431,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <img src="assets/badges/wom-2023.webp" width="77" height="76" alt="Word of Mouth Service Award 2023" decoding="async">
         <img src="assets/badges/wom-2024.webp" width="77" height="76" alt="Word of Mouth Service Award 2024" decoding="async">
       </div>
+      <div class="hero-pic d-only"><img src="assets/apartment-removals.webp?v=2" width="800" height="600" decoding="async" alt="Two smiling Removalists4u movers in navy uniforms carrying branded moving boxes"></div>
     </div>
 
     <div class="qwrap">
@@ -460,7 +467,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <section class="strip" id="reviews" aria-label="Customer reviews">
   <div class="wrap">
     <div class="top">
-      <div class="g"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-g"/></svg><div><h2>4.8 from [X] Google reviews</h2><small><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★</span></small></div></div>
+      <div class="g"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-g"/></svg><div><h2>4.8 from 284 Google reviews</h2><small><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★</span></small></div></div>
       <a class="btn btn-mint d-only" href="#quote">Get my free quote</a>
     </div>
     <!-- testimonials from the current live site; replace with 4–6 real Google reviews (name, date, stars) when supplied -->

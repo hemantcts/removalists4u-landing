@@ -198,6 +198,16 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   .card{padding:22px 18px}
   .card.clean{padding-top:52px}
   .big{font-size:28px}
+  .card{padding:18px 16px}
+  .card.clean{padding-top:46px;padding-bottom:18px}
+  .ribbon{padding:7px 12px;font-size:13px}
+  .card .big,.card .under,.card .ticks,.card .plug,.card .gchip{display:none}
+  .card h3{font-size:19px}
+  .card .line{margin:4px 0 14px;font-size:15px;line-height:1.45}
+  .card .badge{margin-bottom:8px}
+  .toggle{min-height:50px;font-size:16px}
+  .alt{margin-top:10px;font-size:14px}
+  .small{margin-top:10px;font-size:13px}
   .submit .btn{width:100%;min-width:0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toggle[aria-pressed=true] .tk{animation:none}}
@@ -478,6 +488,17 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   /* Map the new property picks back to the existing 1–9 codes, so nothing changes on the PHP side.
      1 single storey · 2 double · 3 triple · 4 apartment with lift · 5–7 apartment without lift (1st, 2nd, 3rd+) · 8 storage · 9 commercial.
      A ground-floor apartment counts as 1 (no stairs). */
+  function typeMsg(p) {
+    var word = p === 'pick' ? 'pick-up' : 'drop-off';
+    var v = function (n) { return (form.querySelector('[name=' + p + '_' + n + ']:checked') || {}).value; };
+    var t = v('type'), fl = v('floor');
+    if (!t) return 'Choose the ' + word + ' property type.';
+    if ((t === 'house' || t === 'townhouse') && !v('levels')) return 'Choose how many levels the ' + word + ' property has.';
+    if (t === 'apartment' && !fl) return "Choose the floor and whether there's a lift.";
+    if (t === 'apartment' && fl !== 'ground' && !v('lift')) return "Choose whether there's a lift.";
+    return '';
+  }
+  function typeOk(p) { var m = typeMsg(p); if (m) $('.err', $('#' + p + 'Type')).textContent = m; return !m; }
   function code(p) {
     var v = function (n) { return (form.querySelector('[name=' + p + '_' + n + ']:checked') || {}).value; };
     var t = v('type');
@@ -561,9 +582,9 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       [$('#fDate'), !!date.value || unsure.checked],
       [$('#fSize'), !!form.querySelector('[name=bedroom_count]:checked')],
       [$('#pickAddr'), !!form.elements.pick_location.value.trim()],
-      [$('#pickType'), !!code('pick')],
+      [$('#pickType'), typeOk('pick') && !!code('pick')],
       [$('#dropAddr'), !!form.elements.drop_location.value.trim()],
-      [$('#dropType'), !!code('drop')]
+      [$('#dropType'), typeOk('drop') && !!code('drop')]
     ];
   }
   form.addEventListener('change', function () {
