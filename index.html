@@ -236,7 +236,7 @@ a.rrow:hover{background:var(--mint-soft)}
 .panel .acts{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:36px}
 .panel .link{color:#fff}
 .panel .avail{color:var(--mint);margin-top:20px}
-.panel img{width:100%;height:100%;object-fit:cover;object-position:40% 12%}
+.panel img{width:100%;height:100%;object-fit:cover;object-position:35% 30%}
 .panel::after{content:"";position:absolute;left:0;top:0;width:150px;height:150px;background:linear-gradient(135deg,#2E4680 0 14%,transparent 14% 19%,var(--mint) 19% 25%,transparent 25%);pointer-events:none}
 
 /* footer */
@@ -477,7 +477,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <section class="sec rates-sec" id="pricing">
   <div class="wrap">
     <div class="rhead">
-      <div><span class="sdiv" aria-hidden="true"></span><span class="eyebrow">Our rates</span><h2>Discounted half-hour rates, sized to your home.</h2></div>
+      <div><span class="sdiv" aria-hidden="true"></span><span class="eyebrow">Our rates</span><h2>Affordable Rates to keep your move cost efficient!</h2></div>
       <p class="lead">Every rate includes two movers and a truck sized to your home. Pick your home size to start a quote.</p>
     </div>
     <div class="rates">
@@ -547,13 +547,13 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 </section>
 
 <section class="sec" id="services">
-  <!-- Service photos: cropped from a client screenshot (about 180px wide), so they are soft. Replace svc-*.webp with the full-size originals when supplied. -->
+  <!-- Service photos: full-size originals supplied by the client. -->
   <div class="wrap">
     <div class="shead"><span class="sdiv" aria-hidden="true"></span><span class="eyebrow">Services</span><h2>Homes, apartments and offices.</h2></div>
     <div class="svc">
-      <div><img src="assets/svc-house.webp" srcset="assets/svc-house-sq.webp 320w, assets/svc-house.webp 600w" sizes="(max-width:760px) 104px, 33vw" width="600" height="450" loading="lazy" decoding="async" alt="Two Removalists4u movers carrying a sofa through a bright living room"><h3><svg aria-hidden="true"><use href="#i-home"/></svg>House removals</h3><p>Experienced, friendly teams who carefully pack, load and transport your belongings to your new home.</p></div>
-      <div><img src="assets/svc-apartment.webp" srcset="assets/svc-apartment-sq.webp 320w, assets/svc-apartment.webp 600w" sizes="(max-width:760px) 104px, 33vw" width="600" height="450" loading="lazy" decoding="async" alt="Two Removalists4u movers carrying boxes out of an apartment lift"><h3><svg aria-hidden="true"><use href="#i-building"/></svg>Apartment removals</h3><p>From a quick apartment shift to a larger unit, handled with care from door to door.</p></div>
-      <div><img src="assets/svc-office.webp" srcset="assets/svc-office-sq.webp 320w, assets/svc-office.webp 600w" sizes="(max-width:760px) 104px, 33vw" width="600" height="450" loading="lazy" decoding="async" alt="Two Removalists4u movers moving desks and office chairs in an open-plan office"><h3><svg aria-hidden="true"><use href="#i-brief"/></svg>Office relocations</h3><p>Minimal downtime and disruption, with IT equipment and workstations moved securely and on time.</p></div>
+      <div><img src="assets/svc-house.webp?v=5" srcset="assets/svc-house-sq.webp?v=5 320w, assets/svc-house.webp?v=5 1200w" sizes="(max-width:760px) 104px, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="Two Removalists4u movers carrying a sofa through a bright living room"><h3><svg aria-hidden="true"><use href="#i-home"/></svg>House removals</h3><p>Experienced, friendly teams who carefully pack, load and transport your belongings to your new home.</p></div>
+      <div><img src="assets/svc-apartment.webp?v=5" srcset="assets/svc-apartment-sq.webp?v=5 320w, assets/svc-apartment.webp?v=5 1200w" sizes="(max-width:760px) 104px, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="Two Removalists4u movers carrying boxes out of an apartment lift"><h3><svg aria-hidden="true"><use href="#i-building"/></svg>Apartment removals</h3><p>From a quick apartment shift to a larger unit, handled with care from door to door.</p></div>
+      <div><img src="assets/svc-office.webp?v=5" srcset="assets/svc-office-sq.webp?v=5 320w, assets/svc-office.webp?v=5 1200w" sizes="(max-width:760px) 104px, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="Two Removalists4u movers moving desks and office chairs in an open-plan office"><h3><svg aria-hidden="true"><use href="#i-brief"/></svg>Office relocations</h3><p>Minimal downtime and disruption, with IT equipment and workstations moved securely and on time.</p></div>
     </div>
     <p class="also"><b>Also available:</b> full or partial packing and unpacking, and interstate moves.</p>
   </div>
@@ -579,14 +579,16 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <section class="sec faq" id="faq">
   <div class="wrap">
     <div><span class="sdiv" aria-hidden="true"></span><span class="eyebrow">FAQ</span><h2>Before you book.</h2></div>
-    <!-- answers marked .tbc are waiting on Removalists4u -->
+    <!-- [confirm] before launch: the 48-hour damage-reporting window in "What happens if something gets damaged?" -->
     <div class="faqs">
-      <details name="f" open><summary>What's included in the half-hour rate?</summary><p class="tbc">Answer to come from Removalists4u: movers, truck, blankets and trolleys.</p></details>
-      <details name="f"><summary>Do stairs, lifts or heavy items cost extra?</summary><p class="tbc">Answer to come from Removalists4u.</p></details>
-      <details name="f"><summary>What happens if something gets damaged?</summary><p class="tbc">Answer to come from Removalists4u.</p></details>
-      <details name="f"><summary>Is there a deposit, and what's the cancellation policy?</summary><p class="tbc">Answer to come from Removalists4u.</p></details>
+      <details name="f" open><summary>What's included in the half-hour rate?</summary><p>Two movers and a truck sized to your home, with blankets and trolleys to protect and move your furniture. Your quote confirms everything before you book.</p></details>
+      <details name="f"><summary>Do stairs, lifts or heavy items cost extra?</summary><p>Let us know about stairs, lifts and heavy items like pianos, pool tables or safes when you enquire. Your quote allows for them, so there are no surprises on the day.</p></details>
+      <details name="f"><summary>What happens if something gets damaged?</summary><p>Providers carry insurance for your move. If anything is damaged, let us know within 48 hours of your move and our team will work through it with you.</p></details>
+      <details name="f"><summary>Is there a deposit, and what's the cancellation policy?</summary><p>A deposit secures your booking. You can reschedule or cancel with more than 48 hours' notice; within 48 hours of your move, the deposit isn't refundable. Interstate moves need at least 7 days' notice.</p></details>
       <details name="f"><summary>What if my move runs over the estimate?</summary><p>You pay for the time taken, per half hour. If your move runs longer than estimated, you're only charged for the additional time at the agreed rate, with no hidden charges.</p></details>
       <details name="f"><summary>Can you do same-day or next-day moves?</summary><p>Often, yes. We recommend booking 3–5 days ahead, but we also take next-day and same-day moves when a team is available. Call us to check today's availability.</p></details>
+      <details name="f"><summary>Can you clean my old place too?</summary><p>Yes. Add an end-of-lease clean with our bond-back guarantee and we'll take 10% off your move. Move-out and move-in cleans also get the 10% off.</p></details>
+      <details name="f"><summary>Can you help connect my utilities?</summary><p>Yes, at no cost. Our connection partner can set up electricity, gas and internet at your new home before you arrive. Just add it when you request your quote.</p></details>
     </div>
   </div>
 </section>
@@ -603,7 +605,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         </div>
         <span class="avail">Our team is available now</span>
       </div>
-      <img src="assets/moving-day-v3.webp" width="590" height="504" loading="lazy" decoding="async" alt="A Removalists4u mover checking a clipboard beside a truck loaded with branded boxes">
+      <img src="assets/moving-day-hq.webp" width="930" height="716" loading="lazy" decoding="async" alt="A Removalists4u mover checking a clipboard beside a truck loaded with branded boxes">
     </div>
   </div>
 </section>
